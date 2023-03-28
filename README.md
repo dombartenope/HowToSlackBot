@@ -45,7 +45,7 @@
 ## <u>Let's Start Building Our Slack Bot</u>:
 
 1. Now we can begin building the slack bot and implementing the logic that works behind the scenes. For the bot that I built, I used the following packages:
-`@slack/boltjs` & `dotenv` 
+`@slack/bolt` & `dotenv` 
 <hr/>
 
 2. Create a `.env` file now so we can make sure to hide the private tokens before pushing the bot to production later. You'll need at least three variables:
@@ -63,7 +63,7 @@ const {App} = require('@slack/bolt');
 
 const app = new App({
     socketMode: true, //remove this line if using events
-    token: process.env.BOT_TOKEN
+    token: process.env.BOT_TOKEN,
     appToken: process.env.SLACK_TOKEN,
     signingSecret: process.env.SIGNING_TOKEN
 });
@@ -74,7 +74,7 @@ const app = new App({
 ```
 (async () => {
     await app.start(process.env.PORT || 3000);
-    console.log("Bolt app is running!);
+    console.log("Bolt app is running!");
 })();
 ```
 <hr/>
@@ -115,7 +115,7 @@ Let's walk through this example:
 ![Resulting product](/images/result.png)
 <hr/>
 
-## <u>In Summary</u>: 
+## <u>Make It Your Own</u>: 
 This is just a simple example of how you would work with Slack's [Block feature](https://api.slack.com/block-kit/building), there's so much more to add and I'd definitely suggest playing around with their [Block Builder](https://api.slack.com/tools/block-kit-builder)!
 
 - **You can open DM's with users using `conversations.open` and passing in user id's**
@@ -139,9 +139,12 @@ app.action("click", async({ ack, body, client}) => {
 })
 ```
 
+**...and so much more!**
+<hr/>
+
 #### All in all this was a really fun project and with Slack's large API to work with, there's a bunch more features to keep adding to the bot to make it more interactive and useful for different use cases. Definitely check out the tutorials and reference to see what else you can add to your bot!
 
 ![tutorials](/images/tuts.png)
 
-Hope this was helpful to anyone trying to build out their own slack bot!
+I've provided the source code for this basic project here for anyone that wants a quick start, I hope this was helpful to anyone trying to build out their own slack bot!
 -Dom

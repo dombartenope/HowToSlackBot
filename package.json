@@ -1,0 +1,24 @@
+{
+  "name": "slackbotguide",
+  "version": "1.0.0",
+  "description": "Boilerplate for a slack bot using the bolt js package",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dombartenope/HowToSlackBot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dombartenope/HowToSlackBot/issues"
+  },
+  "homepage": "https://github.com/dombartenope/HowToSlackBot#readme",
+  "dependencies": {
+    "@slack/bolt": "^3.12.2",
+    "dotenv": "^16.0.3"
+  }
+}
